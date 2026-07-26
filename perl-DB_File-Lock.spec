@@ -1,15 +1,13 @@
 %define upstream_name    DB_File-Lock
-%define upstream_version 0.05
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	0.05
+Release:	7
 
 Summary:	DB_File-Lock module for perl 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/DB_File-Lock
-Source0:	https://cpan.metacpan.org/authors/id/D/DH/DHARRIS/DB_File-Lock-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DH/DHARRIS/DB_File-Lock-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ add an extra argument onto the tie command specifying if the file should
 be locked for reading or writing.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ make test
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.50.0-1mdv2011.0
 + Revision: 403097
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.05-4mdv2009.0
+- rebuild using %0.05 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.05-4mdv2009.0
 + Revision: 256567
 - rebuild
 
